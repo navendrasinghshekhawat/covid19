@@ -73,41 +73,41 @@ ninja();
 //time function
 function print(){
 setTimeout(function(){
-    console.log(confirmedtoday);
-    console.log(activecase);
-    console.log(recoveredtoday);
-    console.log(deathstoday);
+    // console.log(confirmedtoday);
+    // console.log(activecase);
+    // console.log(recoveredtoday);
+    // console.log(deathstoday);
     
 //for world till date
     var landingconfirmed=document.getElementById("confirmedcases");
-    console.log(landingconfirmed);
+    // console.log(landingconfirmed);
     landingconfirmed.innerText="Confirmed cases are " + confirmed;
     
     var landingactive=document.getElementById("activecase");
-    console.log(landingactive);
+    // console.log(landingactive);
     landingactive.innerText="Active cases are " + activecase;
 
     var landingrecovered=document.getElementById("recovered");
-    console.log(landingrecovered);
+    // console.log(landingrecovered);
     landingrecovered.innerText="Recovered cases are " + recovered;
     
     var landingdeaths=document.getElementById("dead");
-    console.log(landingdeaths);
+    // console.log(landingdeaths);
     landingdeaths.innerText="Deaths are  " + deaths;
 
 //for world today
     var landingconfirmedtoday=document.getElementById("confirmedcasestoday");
-    console.log(landingconfirmedtoday);
+    // console.log(landingconfirmedtoday);
     landingconfirmedtoday.innerText="Confirmed Cases today are  " + confirmedtoday;
 
     var landingrecoveredtoday=document.getElementById("recoveredtoday");
-    console.log(landingrecoveredtoday);
+    // console.log(landingrecoveredtoday);
     landingrecoveredtoday.innerText="Recovered Cases today are  " + recoveredtoday;
 
     var landingdeathstoday=document.getElementById("deadtoday");
-    console.log(landingdeathstoday);
+    // console.log(landingdeathstoday);
     landingdeathstoday.innerText="Deaths today are  " + deathstoday;
-  //  print();
+   print();
 },3000);
 
 }
