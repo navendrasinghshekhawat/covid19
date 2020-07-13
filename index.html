@@ -21,7 +21,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-info">
         <div class="container">
-          <a class="navbar-brand" href="#"><strong id="home">Covid-19 Counter</strong></a>
+          <a class="navbar-brand" href="#" id="covid"><strong>Covid-19 Counter</strong></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar navbar-kebab"></span>
           <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" href="#"><strong id="india">India </strong><span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#"><strong id="india">India </strong><span class="sr-only"></span></a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#"><strong id="word">World</strong></a>
@@ -56,34 +56,34 @@
       <h3 align="Center"><strong>India</strong></h3>
     <table class="table">
         <thead class=" text-primary"> 
-           <tr><th> State </th> <th> Confirmed </th> <th> Active </th> <th class="text-right"> Deaths </th> </tr>
+           <tr><th> State </th> <th> Confirmed </th> <th> Active </th> <th> Recovered </th> <th > Deaths </th> </tr>
         </thead>
      <tbody>
-          <tr> <td> element of table 1 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td class="text-right"> $36,738 </td> </tr>
-          <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td class="text-right"> $23,789 </td> </tr> 
+          <tr> <td> name of state </td> <td> confirm1 </td> <td> Active1 </td> <td> recover1 </td> <td > $36,738 </td> </tr>
+          <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td><td > $23,789 </td> </tr> 
           
     </tbody>
         </table> 
     </div>
-    <br><br>
     <!-- this is table world  -->
     <div class="table-responsive" id="tableworld">
       <h3 align="Center"><strong>World</strong></h3>
     <table class="table">
       <thead class=" text-primary"> 
-         <tr><th> Country Name </th> <th> Confirmed </th> <th> Active </th> <th class="text-right"> Deaths </th> </tr>
+         <tr><th> Country Name </th> <th> Confirmed </th> <th> Active </th> <th> Recovered </th> <th > Deaths </th> </tr>
       </thead>
    <tbody>
-        <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td class="text-right"> $36,738 </td> </tr>
-        <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td class="text-right"> $23,789 </td> </tr> 
+        <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td> recover1 </td> <td > $36,738 </td> </tr>
+        <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr> 
         
   </tbody>
       </table> 
     </div>
     <!-- table ends here -->
-    <!-- nav-based-card for landing page -->
+
+    <!-- nav-based-card for landing page world till date-->
     <div id="land">
-    <h3 align="Center" ><font size="30px"><strong>Worldwide Total(s)</strong></font></h3>
+    <h3 align="Center" ><font size="30px"><strong>Worldwide Cases Till Date</strong></font></h3>
     <div class="card card-nav-tabs card-plain">
       <div class="card-header card-header-danger">
           <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
@@ -94,7 +94,10 @@
                           <a class="nav-link active" href="#confirmed" data-toggle="tab"><font size="5px"><strong>Confirmed</strong></font></a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="#active" data-toggle="tab"><font size="5px"><strong>Recovered</strong></font></a>
+                        <a class="nav-link" href="#active" data-toggle="tab"><font size="5px"><strong>Active</strong></font></a>
+                     </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#recover" data-toggle="tab"><font size="5px"><strong>Recovered</strong></font></a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="#deaths" data-toggle="tab"><font size="5px"><strong>Deaths</strong></font></a>
@@ -108,6 +111,9 @@
                 <font size="10px"><p id="confirmedcases">Confirmed cases are</p></font>
               </div>
               <div class="tab-pane" id="active">
+                <font size="10px"><p id="activecase">Active cases are </p></font>
+              </div>
+              <div class="tab-pane" id="recover">
                 <font size="10px"><p id="recovered">Recovered cases are </p></font>
               </div>
               <div class="tab-pane" id="deaths">
@@ -118,7 +124,56 @@
     </div>
     </div>
     <!-- card ends here -->
+    <br><br><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda"><br><br><br>
+<!-- new card for toady stats begins here -->
+<div id="landtoday">
+  <h3 align="Center" ><font size="30px"><strong>Worldwide Cases Today</strong></font></h3>
+  <div class="card card-nav-tabs card-plain">
+    <div class="card-header card-header-danger">
+        <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+        <div class="nav-tabs-navigation ">
+            <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs " data-tabs="tabs">
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="#confirmedtoday" data-toggle="tab"><font size="5px"><strong>Confirmed</strong></font></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recovertoday" data-toggle="tab"><font size="5px"><strong>Recovered</strong></font></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deathstoday" data-toggle="tab"><font size="5px"><strong>Deaths</strong></font></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div><div class="card-body ">
+        <div class="tab-content text-center">
+            <div class="tab-pane active" id="confirmedtoday">
+              <font size="10px"><p id="confirmedcasestoday">Confirmed cases today are</p></font>
+            </div>
+            <div class="tab-pane" id="recovertoday">
+              <font size="10px"><p id="recoveredtoday">Recovered cases today are </p></font>
+            </div>
+            <div class="tab-pane" id="deathstoday">
+              <font size="10px"><p id="deadtoday">Deaths today are</p></font>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  <!-- the card ends here -->
+
+
+
+
+
+
   </body>
+
+
+
+
+<!-- javascript file links ahead -->
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
