@@ -107,7 +107,9 @@ setTimeout(function(){
     var landingdeathstoday=document.getElementById("deadtoday");
     // console.log(landingdeathstoday);
     landingdeathstoday.innerText="Deaths today are  " + deathstoday;
-   print();
+    ninja();
+    mathapi();
+    print();
 },3000);
 
 }
