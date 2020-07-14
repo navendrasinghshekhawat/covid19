@@ -44,15 +44,15 @@ home.addEventListener('click',function(){
 // //thevirustracker.com api for landing page....
 var confirmed,recovered,deaths,activecase,confirmedtoday,recoveredtoday,deathstoday;
 function mathapi(){
-    fetch('https://api.thevirustracker.com/free-api?global=stats')
+    fetch('https://corona-api.com/timeline')
     .then((response)=>{
     return response.json()
     })
     .then((data)=>{
-    confirmed=data["results"][0]["total_cases"];
-    recovered=data["results"][0]["total_recovered"];
-    deaths=data["results"][0]["total_deaths"];
-    activecase=data["results"][0]["total_deaths"];
+    confirmed=data["data"][0]["confirmed"];
+    recovered=data["data"][0]["recovered"];;
+    deaths=data["data"][0]["deaths"];;
+    activecase=data["data"][0]["active"];;
     })
 }
 mathapi();
@@ -71,13 +71,14 @@ function ninja(){
 }
 ninja();
 //time function
+var i=0;
 function print(){
 setTimeout(function(){
     // console.log(confirmedtoday);
     // console.log(activecase);
     // console.log(recoveredtoday);
     // console.log(deathstoday);
-    
+    i=i+1;
 //for world till date
     var landingconfirmed=document.getElementById("confirmedcases");
     // console.log(landingconfirmed);
@@ -107,14 +108,27 @@ setTimeout(function(){
     var landingdeathstoday=document.getElementById("deadtoday");
     // console.log(landingdeathstoday);
     landingdeathstoday.innerText="Deaths today are  " + deathstoday;
-    ninja();
+    if(i<3){
+        ninja();
     mathapi();
-    print();
+    }
 },3000);
 
 }
 //test of time function...for landing page
 print();
+function refresh(){
+setTimeout(function(){
+    if(i>3){
+    ninja();
+    mathapi();}
+    print();
+},10000);
+}
+refresh();
+
+
+
 
 //thevirustracker.com api for world
 
