@@ -41,7 +41,7 @@ home.addEventListener('click',function(){
     showt("landtoday");
     });
 
-// //thevirustracker.com api for landing page....
+//corona-api for landing page....
 var confirmed,recovered,deaths,activecase,confirmedtoday,recoveredtoday,deathstoday;
 function mathapi(){
     fetch('https://corona-api.com/timeline')
@@ -57,7 +57,7 @@ function mathapi(){
 }
 mathapi();
 
-//ninja api for landing page today stats
+//corona-api for landing page today stats
 function ninja(){
     fetch('https://corona-api.com/timeline')
     .then((response)=>{
@@ -131,9 +131,44 @@ refresh();
 
 
 
-//thevirustracker.com api for world
+ //corona-api for world
+var a,b,c,d,e,f,g,h,x='',z='';
+var url="https://corona-api.com/countries";
+var corona=document.getElementById('corona');
 
+function test(){
+fetch(url)
+    .then((response)=>{
+    return response.json()
+    })
+    .then((data)=>{
+    	for(i in data["data"]){
+    a=data["data"][i]["name"]; //name of country
+b=data["data"][i]["population"]; //population 
+c=data["data"][i]["latest_data"]["confirmed"]; //confirmed till date
+f=data["data"][i]["latest_data"]["recovered"]; //recovered till date
+e=data["data"][i]["latest_data"]["deaths"]; // deaths till date
+d=data["data"][i]["latest_data"]["critical"]; //active cases
+g=data["data"][i]["today"]["confirmed"]; // confirmed today
+h=data["data"][i]["today"]["deaths"]; //deaths today
 
+console.log(a,b,c,d,e,f,g,h);
+
+x+='<tr>';
+x+='<td>'+a+'</td>';
+x+='<td>'+b+'</td>';
+x+='<td>'+c+'</td>';
+x+='<td>'+d+'</td>';
+x+='<td>'+e+'</td>';
+x+='<td>'+f+'</td>';
+x+='<td>'+g+'</td>';
+x+='<td>'+h+'</td>';
+x+='</tr>';
+}
+z=z+x;
+corona.innerHTML=z;
+    })}
+test();
 
 
 
