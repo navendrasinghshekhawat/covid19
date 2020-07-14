@@ -50,9 +50,9 @@ function mathapi(){
     })
     .then((data)=>{
     confirmed=data["data"][0]["confirmed"];
-    recovered=data["data"][0]["recovered"];;
-    deaths=data["data"][0]["deaths"];;
-    activecase=data["data"][0]["active"];;
+    recovered=data["data"][0]["recovered"];
+    deaths=data["data"][0]["deaths"];
+    activecase=data["data"][0]["active"];
     })
 }
 mathapi();
