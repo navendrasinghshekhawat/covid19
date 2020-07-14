@@ -59,14 +59,14 @@ mathapi();
 
 //ninja api for landing page today stats
 function ninja(){
-    fetch('https://corona.lmao.ninja/v2/continents?yesterday=true&sort')
+    fetch('https://corona-api.com/timeline')
     .then((response)=>{
     return response.json()
     })
     .then((data)=>{
-    confirmedtoday=data[0]["todayCases"];
-    recoveredtoday=data[0]["todayRecovered"];
-    deathstoday=data[0]["todayDeaths"];
+    confirmedtoday=data["data"][0]["new_confirmed"];
+    recoveredtoday=data["data"][0]["new_recovered"];
+    deathstoday=data["data"][0]["new_deaths"];
     })
 }
 ninja();
