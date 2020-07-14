@@ -50,9 +50,9 @@ function mathapi(){
     })
     .then((data)=>{
     confirmed=data["data"][0]["confirmed"];
-    recovered=data["data"][0]["recovered"];;
-    deaths=data["data"][0]["deaths"];;
-    activecase=data["data"][0]["active"];;
+    recovered=data["data"][0]["recovered"];
+    deaths=data["data"][0]["deaths"];
+    activecase=data["data"][0]["active"];
     })
 }
 mathapi();
@@ -108,23 +108,24 @@ setTimeout(function(){
     var landingdeathstoday=document.getElementById("deadtoday");
     // console.log(landingdeathstoday);
     landingdeathstoday.innerText="Deaths today are  " + deathstoday;
-    if(i<3){
-        ninja();
-    mathapi();
-    }
+    
 },3000);
 
 }
 //test of time function...for landing page
 print();
+
 function refresh(){
 setTimeout(function(){
-    if(i>3){
+  
     ninja();
-    mathapi();}
+    mathapi();
     print();
+    refresh();
+  
 },10000);
 }
+
 refresh();
 
 
