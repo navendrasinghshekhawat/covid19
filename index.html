@@ -44,7 +44,7 @@
                 <div class="form-group no-border">
                   <input type="text" class="form-control" placeholder="Search" id="mySearch">
                 </div>
-                <button type="submit" class="btn btn-neutral btn-icon btn-round">
+                <button type="submit" class="btn btn-neutral btn-icon btn-round" id="searchclick">
                     <i class="nc-icon nc-zoom-split"></i>
                 </button>
             </form>
@@ -68,7 +68,7 @@
     <!-- this is table world  -->
     <div class="table-responsive " id="tableworld">
       <h3 align="Center"><strong>World</strong></h3>
-    <table class="table table-sm table-bordered table-hover">
+    <table class="table table-sm table-bordered table-hover ">
       <thead class=" text-primary thead-dark"> 
          <tr><th> Country Name </th> <th> Population </th> <th> Confirmed </th> <th> Active </th> <th > Deaths </th>  <th > Recovered </th>  <th > Confirmed<em>(today)</em> </th>  <th > Deaths<em>(today)</em> </th> </tr>
       </thead>
@@ -124,6 +124,49 @@
     </div>
     </div>
     <!-- card ends here -->
+    <!-- new card for search bar -->
+<div id="searchbar">
+  <h3 align="Center" ><font size="30px"><strong id="countryname">Name of Country</strong></font></h3>
+  <div class="card card-nav-tabs card-plain">
+    <div class="card-header card-header-danger">
+        <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+        <div class="nav-tabs-navigation ">
+            <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs " data-tabs="tabs">
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="#confirmedsearch" data-toggle="tab"><font size="5px"><strong>Confirmed</strong></font></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#activesearch" data-toggle="tab"><font size="5px"><strong>Active</strong></font></a>
+                   </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recoversearch" data-toggle="tab"><font size="5px"><strong>Recovered</strong></font></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deathssearch" data-toggle="tab"><font size="5px"><strong>Deaths</strong></font></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div><div class="card-body ">
+        <div class="tab-content text-center">
+            <div class="tab-pane active" id="confirmedsearch">
+              <font size="10px"><p id="confirmedcasesinsearch">Confirmed cases are</p></font>
+            </div>
+            <div class="tab-pane" id="activesearch">
+              <font size="10px"><p id="activecasesinsearch">Active cases are </p></font>
+            </div>
+            <div class="tab-pane" id="recoversearch">
+              <font size="10px"><p id="recoveredcasesinsearch">Recovered cases are </p></font>
+            </div>
+            <div class="tab-pane" id="deathssearch">
+              <font size="10px"><p id="deadinsearch">Deaths are</p></font>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  <!-- card for search bar ends here -->
     <br><br><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda"><br><br><br>
 <!-- new card for toady stats begins here -->
 <div id="landtoday">
