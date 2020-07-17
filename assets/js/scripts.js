@@ -2,6 +2,7 @@
 var l=0;
 var fin,cur,act,rec,dea,coun,kill;
 var confirmed,recovered,deaths,activecase,confirmedtoday,recoveredtoday,deathstoday;
+var indiaconfirmed,indiarecovered,indiaactive,indiadeaths;
 //to hide element
 function hidet(table){
 document.getElementById(table).style.display = 'none'; 
@@ -30,6 +31,10 @@ var searchconfirmed=document.getElementById("confirmedcasesinsearch");
 var searchactive=document.getElementById("activecasesinsearch");
 var searchrecovered=document.getElementById("recoveredcasesinsearch");
 var searchdeaths=document.getElementById("deadinsearch");
+var indiacon=document.getElementById("confirmindia");
+var indiaacti=document.getElementById("actiindia");
+var indiareco=document.getElementById("recoindia");
+var indiadead=document.getElementById("deadindia");
 
 
 //links and their references.
@@ -93,6 +98,11 @@ setTimeout(function(){
     landingconfirmedtoday.innerText="Confirmed Cases today are  " + confirmedtoday;
     landingrecoveredtoday.innerText="Recovered Cases today are  " + recoveredtoday;
     landingdeathstoday.innerText="Deaths today are  " + deathstoday;
+//for india today
+    indiacon.innerText="Confirmed Cases are " + indiaconfirmed;
+    indiaacti.innerText="Active Cases are " + indiaactivated;
+    indiareco.innerText="Recovered Cases are " + indiarecover;
+    indiadead.innerText="Deaths are " + indiadeath;
 },3000);
 }
 
@@ -101,7 +111,7 @@ function refresh(){
 setTimeout(function(){
     homepage();
     print();
-    world_table();
+    // world_table();
     refresh();
 },10000);
 }
@@ -198,8 +208,21 @@ home.addEventListener('click',function(){
     }
     });
 
-
-
+// function for india total cases
+function indiatoday(){
+    fetch('https://api.rootnet.in/covid19-in/stats/latest')
+    .then((response)=>{
+    return response.json()
+    })
+    .then((data)=>{
+    indiaconfirmed=data["data"]["unofficial-summary"][0]["total"];
+    //deathstoday=data["data"][0]["new_deaths"];
+    indiaactivated=data["data"]["unofficial-summary"][0]["active"];
+    indiarecover=data["data"]["unofficial-summary"][0]["recovered"];
+    indiadeath=data["data"]["unofficial-summary"][0]["deaths"];
+    })
+}
+indiatoday();
 
  
 

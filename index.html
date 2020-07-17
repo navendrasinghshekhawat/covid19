@@ -51,19 +51,160 @@
           </div>
         </div>
       </nav><br>
-      <!-- this is table india -->
-    <div class="table-responsive" id="tableindia">
-      <h3 align="Center"><strong>India</strong></h3>
-    <table class="table">
-        <thead class=" text-primary"> 
-           <tr><th> State </th> <th> Confirmed </th> <th> Active </th> <th> Recovered </th> <th > Deaths </th> </tr>
-        </thead>
-     <tbody>
-          <tr> <td> name of state </td> <td> confirm1 </td> <td> Active1 </td> <td> recover1 </td> <td > $36,738 </td> </tr>
-          <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td><td > $23,789 </td> </tr> 
-          
-    </tbody>
-        </table> 
+      <!-- this is india -->
+      <div  id="tableindia">
+             <!-- nav based navigation for india features -->
+             <div id="indiafeat">
+              <h3 align="Center" ><font size="30px" style="font-family:'Teko'" color="#ff9933"><strong><b>भारत</b></strong></font></h3>
+              <div class="card card-nav-tabs card-plain">
+                <div class="card-header card-header-danger">
+                    <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                    <div class="nav-tabs-navigation ">
+                        <div class="nav-tabs-wrapper">
+                            <ul class="nav nav-tabs " data-tabs="tabs">
+                                <li class="nav-item ">
+                                    <a class="nav-link active" href="#total" data-toggle="tab"><font size="5px"><strong>Total Cases</strong></font></a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#state" data-toggle="tab"><font size="5px"><strong>State-wise</strong></font></a>
+                               </li>
+                               <li class="nav-item">
+                                <a class="nav-link" href="#tests" data-toggle="tab"><font size="5px"><strong>Tests conducted</strong></font></a>
+                             </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#hospital" data-toggle="tab"><font size="5px"><strong>Hospitals(info)</strong></font></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#medical" data-toggle="tab"><font size="5px"><strong>Medical Colleges(info)</strong></font></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><div class="card-body ">
+                    <div class="tab-content text-center">
+                        <div class="tab-pane active" id="total">
+                          <font size="10px"><p id="total">
+                            <!-- The total card begins here -->
+                            <div id="totalindiacases">
+                              <!-- <h3 align="Center" ><font size="30px"><strong><u>India total cases till date are as follows</u></strong></font></h3> -->
+                              <div class="card card-nav-tabs card-plain">
+                                <div class="card-header card-header-danger">
+                                    <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                                    <div class="nav-tabs-navigation ">
+                                        <div class="nav-tabs-wrapper">
+                                            <ul class="nav nav-tabs " data-tabs="tabs">
+                                                <li class="nav-item ">
+                                                    <a class="nav-link active" href="#confirmedindia" data-toggle="tab"><font size="5px"><strong>Confirmed</strong></font></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="#activeindia" data-toggle="tab"><font size="5px"><strong>Active</strong></font></a>
+                                               </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#recoveredindia" data-toggle="tab"><font size="5px"><strong>Recovered</strong></font></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#deathindia" data-toggle="tab"><font size="5px"><strong>Deaths</strong></font></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><div class="card-body ">
+                                    <div class="tab-content text-center">
+                                        <div class="tab-pane active" id="confirmedindia">
+                                          <font size="10px"><p id="confirmindia">Total Confirmed cases are </p></font>
+                                        </div>
+                                        <div class="tab-pane" id="activeindia">
+                                          <font size="10px"><p id="actiindia">Active cases are </p></font>
+                                        </div>
+                                        <div class="tab-pane" id="recoveredindia">
+                                          <font size="10px"><p id="recoindia">Total Recovered cases are </p></font>
+                                        </div>
+                                        <div class="tab-pane" id="deathindia">
+                                          <font size="10px"><p id="deadindia">Total Deaths are </p></font>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              </div>
+                              <!-- the Total card ends here -->
+                          </p></font>
+                        </div>
+                        <div class="tab-pane" id="state">
+                            <!-- this is statewise table for india -->
+                            <div id="state">
+                              <div class="table-responsive " id="">
+                                <h3 align="Center"><strong>World</strong></h3>
+                              <table class="table table-md table-bordered table-hover ">
+                                <thead class=" text-primary thead-dark"> 
+                                   <tr><th> State Name </th> <th> Confirmed </th> <th> Active </th> <th> Recovered </th> <th > Deaths </th></tr>
+                                </thead>
+                             <tbody id="">
+                                  <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td> recover1 </td> <td > $36,738 </td> </tr>
+                                  <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr> 
+                                  
+                            </tbody>
+                                </table> 
+                              </div>
+                          </div> <!-- table ends here-->
+                        </div>
+                        <div class="tab-pane" id="tests">
+                          <!-- this is tests conducted table for india -->
+                          <div id="state">
+                            <div class="table-responsive " id="">
+                              <h3 align="Center"><strong>Tests conducted</strong></h3>
+                            <table class="table table-md table-bordered table-hover ">
+                              <thead class=" text-primary thead-dark"> 
+                                 <tr><th>Date </th> <th> Tests taken </th></tr>
+                              </thead>
+                           <tbody id="">
+                                <tr> <td> element of table 2 </td> <td> Niger </td></tr>
+                                <tr> <td> Minerva Hooper </td> <td> Curaçao </td> </tr> 
+                                
+                          </tbody>
+                              </table> 
+                            </div>
+                        </div> <!-- table ends here-->
+                      </div>
+                        <div class="tab-pane" id="hospital">
+                          <div class="tab-pane" id="hospitalinfo">
+                            <!-- this is hospital and beds table for india -->
+                            <div id="hospital">
+                              <div class="table-responsive " id="">
+                                <h3 align="Center"><strong>Hospitals information</strong></h3>
+                              <table class="table table-md table-bordered table-hover ">
+                                <thead class=" text-primary thead-dark"> 
+                                   <tr><th> State</th><th>Hospitals</th><th>Rural H.</th><th>Urban H.</th><th>Total Beds</th><th>Rural Beds</th><th>Urban Beds</th><th>As on</th></tr>
+                                </thead>
+                             <tbody id="">
+                                  <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td> recover1 </td> <td > $36,738 </td> </tr>
+                                  <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr> 
+                            </tbody>
+                                </table> 
+                              </div>
+                          </div> <!-- table ends here-->
+                        </div>
+                        </div>
+                        <div class="tab-pane" id="medical">
+                         <!-- this is Medical college and beds table for india -->
+                         <div id="medical>
+                          <div class="table-responsive " id="">
+                            <h3 align="Center"><strong>Medical Colleges information</strong></h3>
+                          <table class="table table-md table-bordered table-hover ">
+                            <thead class=" text-primary thead-dark"> 
+                               <tr><th> State</th><th>College</th><th>City</th><th>Ownership</th><th>Admission Capacity</th><th>Beds</th></tr>
+                            </thead>
+                         <tbody id="">
+                              <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td> recover1 </td> <td > $36,738 </td> </tr>
+                              <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr> 
+                        </tbody>
+                            </table> 
+                          </div>
+                      </div> <!-- table ends here-->
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
     </div>
     <!-- this is table world  -->
     <div class="table-responsive " id="tableworld">
@@ -126,7 +267,7 @@
     <!-- card ends here -->
     <!-- new card for search bar -->
 <div id="searchbar">
-  <h3 align="Center" ><font size="30px"><strong id="countryname">Name of Country</strong></font></h3>
+  <h3 align="Center"><font size="30px"><strong id="countryname">Name of Country</strong></font></h3>
   <div class="card card-nav-tabs card-plain">
     <div class="card-header card-header-danger">
         <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
@@ -148,7 +289,7 @@
                 </ul>
             </div>
         </div>
-    </div><div class="card-body ">
+    </div><div class="card-body">
         <div class="tab-content text-center">
             <div class="tab-pane active" id="confirmedsearch">
               <font size="10px"><p id="confirmedcasesinsearch">Confirmed cases are</p></font>
