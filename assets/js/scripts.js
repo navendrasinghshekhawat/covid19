@@ -119,11 +119,10 @@ setTimeout(function(){
 
 //corona-api for world table
 var a,b,c,d,e,f,g,h,x='',z='',fun,store;
-var url="https://corona-api.com/countries";
 var corona=document.getElementById('corona');
 //test function for adding data to the world table
 function world_table(){
-fetch(url)
+fetch('https://corona-api.com/countries')
     .then((response)=>{
     return response.json()
     })
@@ -224,7 +223,147 @@ function indiatoday(){
 }
 indiatoday();
 
- 
+
+ //corona-api for india statewise table
+var p,q,r,s,t,u='',v='',w,ct,rt,dt;
+var stateindia=document.getElementById('statewisetable');
+//india_table function for adding data to the india table
+function india_table(){
+fetch("https://api.covid19india.org/data.json")
+    .then((response)=>{
+    return response.json()
+    })
+    .then((data)=>{
+w=data; //data for searching
+    	for(k in data["statewise"]){
+          p=data["statewise"][k]["state"]; //state name
+          q=data["statewise"][k]["confirmed"]; //total confirmed cases
+          r=data["statewise"][k]["active"]; //total active cases
+          s=data["statewise"][k]["recovered"]; //total recovered cases
+          t=data["statewise"][k]["deaths"] //total deaths cases
+          ct=data["statewise"][k]["deltaconfirmed"]; //confirmed today cases
+          rt=data["statewise"][k]["deltarecovered"];
+          dt=data["statewise"][k]["deltadeaths"];
+//console.log(p,q,r,s,t,ct,rt,dt);
+if(k==0){
+    continue;
+}
+          u+='<tr>';
+          u+='<td>'+p+'</td>';
+          u+='<td>'+q+'</td>';
+          u+='<td>'+r+'</td>';
+          u+='<td>'+s+'</td>';
+          u+='<td>'+t+'</td>';
+          u+='<td>'+ct+'</td>';
+          u+='<td>'+rt+'</td>';
+          u+='<td>'+dt+'</td>';
+          u+='</tr>';
+}
+v=v+u;
+stateindia.innerHTML=v;
+    })}
+india_table();
+
+//corona-api for india tests taken table
+var date,test,res='',restotal='';
+var testindia=document.getElementById('indiatest');
+//india_test function for adding data to the test taken table
+function india_test(){
+fetch("https://api.rootnet.in/covid19-in/stats/testing/history")
+    .then((response)=>{
+    return response.json()
+    })
+    .then((data)=>{
+w=data; //data for searching
+    	for(m in data["data"]){
+          date=data["data"][m]["day"];
+          test=data["data"][m]["totalSamplesTested"];
+
+          res+='<tr>';
+          res+='<td>'+date+'</td>';
+          res+='<td>'+test+'</td>';
+          res+='</tr>';
+}
+restotal=restotal+res;
+testindia.innerHTML=restotal;
+    })}
+india_test();
+
+
+//corona-api for hospitals information table
+var hs,hos,rh,uh,tb,rb,ub,ason,hospi='',hospitotal='';
+var hospiindia=document.getElementById('hospitals');
+var vrl="https://api.rootnet.in/covid19-in/hospitals/beds";
+//india_test function for adding data to the hospitals table
+function india_hospi(){
+fetch(vrl)
+    .then((response)=>{
+    return response.json()
+    })
+    .then((data)=>{
+    	for(o in data["data"]["regional"]){
+           
+          hs=data["data"]["regional"][o]["state"];
+          hos=data["data"]["regional"][o]["totalHospitals"];
+          rh=data["data"]["regional"][o]["ruralHospitals"];
+          uh=data["data"]["regional"][o]["urbanHospitals"];
+          tb=data["data"]["regional"][o]["totalBeds"];
+          rb=data["data"]["regional"][o]["ruralBeds"];
+          ub=data["data"]["regional"][o]["urbanBeds"];
+          ason=data["data"]["regional"][o]["asOn"];
+
+          hospi+='<tr>';
+          hospi+='<td>'+hs+'</td>';
+          hospi+='<td>'+hos+'</td>';
+          hospi+='<td>'+rh+'</td>';
+          hospi+='<td>'+uh+'</td>';
+          hospi+='<td>'+tb+'</td>';
+          hospi+='<td>'+rb+'</td>';
+          hospi+='<td>'+ub+'</td>';
+          hospi+='<td>'+ason+'</td>';
+          hospi+='</tr>';
+}
+hospitotal=hospitotal+hospi;
+hospiindia.innerHTML=hospitotal;
+    })}
+india_hospi();
+
+
+//corona-api for Medical colleges information table
+var ms,mn,mc,mo,ma,mh,lastupdate,medi='',meditotal='';
+var mediindia=document.getElementById('mediindia');
+var xrl="https://api.rootnet.in/covid19-in/hospitals/medical-colleges";
+//india_test function for adding data to the medical colleges table
+function india_medi(){
+fetch(xrl)
+    .then((response)=>{
+    return response.json()
+    })
+    .then((data)=>{
+    	for(pk in data["data"]["medicalColleges"]){
+           
+          ms=data["data"]["medicalColleges"][pk]["state"];
+          mn=data["data"]["medicalColleges"][pk]["name"];
+          mc=data["data"]["medicalColleges"][pk]["city"];
+          mo=data["data"]["medicalColleges"][[pk]]["ownership"];
+          ma=data["data"]["medicalColleges"][pk]["admissionCapacity"];
+          mh=data["data"]["medicalColleges"][pk]["hospitalBeds"];          
+
+          medi+='<tr>';
+          medi+='<td>'+ms+'</td>';
+          medi+='<td>'+mn+'</td>';
+          medi+='<td>'+mc+'</td>';
+          medi+='<td>'+mo+'</td>';
+          medi+='<td>'+ma+'</td>';
+          medi+='<td>'+mh+'</td>';
+          medi+='</tr>';
+}
+meditotal=meditotal+medi;
+mediindia.innerHTML=meditotal;
+    })}
+india_medi();
+
+
 
 
 

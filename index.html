@@ -69,7 +69,7 @@
                                   <a class="nav-link" href="#state" data-toggle="tab"><font size="5px"><strong>State-wise</strong></font></a>
                                </li>
                                <li class="nav-item">
-                                <a class="nav-link" href="#tests" data-toggle="tab"><font size="5px"><strong>Tests conducted</strong></font></a>
+                                <a class="nav-link" href="#tests" data-toggle="tab"><font size="5px"><strong>Tests Conducted</strong></font></a>
                              </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#hospital" data-toggle="tab"><font size="5px"><strong>Hospitals(info)</strong></font></a>
@@ -108,7 +108,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div><div class="card-body ">
+                                </div><div class="card-body">
                                     <div class="tab-content text-center">
                                         <div class="tab-pane active" id="confirmedindia">
                                           <font size="10px"><p id="confirmindia">Total Confirmed cases are </p></font>
@@ -128,20 +128,19 @@
                               </div>
                               <!-- the Total card ends here -->
                           </p></font>
-                        </div>
+                        </div> <!-- the total cases ends here-->
                         <div class="tab-pane" id="state">
                             <!-- this is statewise table for india -->
                             <div id="state">
                               <div class="table-responsive " id="">
-                                <h3 align="Center"><strong>World</strong></h3>
+                                <h3 align="Center"><strong>State-wise List</strong></h3>
                               <table class="table table-md table-bordered table-hover ">
                                 <thead class=" text-primary thead-dark"> 
-                                   <tr><th> State Name </th> <th> Confirmed </th> <th> Active </th> <th> Recovered </th> <th > Deaths </th></tr>
+                                   <tr><th>State Name</th><th>Confirmed</th><th>Active</th><th>Recovered</th><th>Deaths</th><th>Confirmed<em>(today)</em></th><th>Recovered<em>(today)</em></th><th>Deaths<em>(today)</em></th></tr>
                                 </thead>
-                             <tbody id="">
+                             <tbody id="statewisetable">
                                   <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td> recover1 </td> <td > $36,738 </td> </tr>
-                                  <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr> 
-                                  
+                                  <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr>
                             </tbody>
                                 </table> 
                               </div>
@@ -149,17 +148,16 @@
                         </div>
                         <div class="tab-pane" id="tests">
                           <!-- this is tests conducted table for india -->
-                          <div id="state">
-                            <div class="table-responsive " id="">
-                              <h3 align="Center"><strong>Tests conducted</strong></h3>
+                          <div id="tests">
+                            <div class="table-responsive " id="tests">
+                              <h3 align="Center"><strong>Tests Conducted</strong></h3>
                             <table class="table table-md table-bordered table-hover ">
                               <thead class=" text-primary thead-dark"> 
-                                 <tr><th>Date </th> <th> Tests taken </th></tr>
+                                 <tr><th>Date </th> <th> Tests Conducted </th></tr>
                               </thead>
-                           <tbody id="">
+                           <tbody id="indiatest">
                                 <tr> <td> element of table 2 </td> <td> Niger </td></tr>
                                 <tr> <td> Minerva Hooper </td> <td> Curaçao </td> </tr> 
-                                
                           </tbody>
                               </table> 
                             </div>
@@ -169,13 +167,13 @@
                           <div class="tab-pane" id="hospitalinfo">
                             <!-- this is hospital and beds table for india -->
                             <div id="hospital">
-                              <div class="table-responsive " id="">
+                              <div class="table-responsive " id="hospital">
                                 <h3 align="Center"><strong>Hospitals information</strong></h3>
                               <table class="table table-md table-bordered table-hover ">
                                 <thead class=" text-primary thead-dark"> 
                                    <tr><th> State</th><th>Hospitals</th><th>Rural H.</th><th>Urban H.</th><th>Total Beds</th><th>Rural Beds</th><th>Urban Beds</th><th>As on</th></tr>
                                 </thead>
-                             <tbody id="">
+                             <tbody id="hospitals">
                                   <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td> recover1 </td> <td > $36,738 </td> </tr>
                                   <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr> 
                             </tbody>
@@ -187,13 +185,13 @@
                         <div class="tab-pane" id="medical">
                          <!-- this is Medical college and beds table for india -->
                          <div id="medical>
-                          <div class="table-responsive " id="">
+                          <div class="table-responsive " id="medical">
                             <h3 align="Center"><strong>Medical Colleges information</strong></h3>
                           <table class="table table-md table-bordered table-hover ">
                             <thead class=" text-primary thead-dark"> 
                                <tr><th> State</th><th>College</th><th>City</th><th>Ownership</th><th>Admission Capacity</th><th>Beds</th></tr>
                             </thead>
-                         <tbody id="">
+                         <tbody id="mediindia">
                               <tr> <td> element of table 2 </td> <td> Niger </td> <td> Oud-Turnhout </td> <td> recover1 </td> <td > $36,738 </td> </tr>
                               <tr> <td> Minerva Hooper </td> <td> Curaçao </td> <td> Sinaai-Waas </td> <td> recover2 </td> <td > $23,789 </td> </tr> 
                         </tbody>
