@@ -36,9 +36,12 @@
               <li class="nav-item active">
                 <a class="nav-link" href="#"><strong id="word">World</strong></a>
               </li>
-              <!-- <li class="nav-item active">
-                <a class="nav-link " href="#">State-wise</a>
-              </li> -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><strong id="Q">FAQs</strong></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link " href="https://navendrasinghshekhawat.github.io/resume/index.html" target="_blank"><strong id="developer"> About Developer</strong></a>
+              </li>
             </ul>
             <form class="form-inline ml-auto">
                 <div class="form-group no-border">
@@ -127,6 +130,44 @@
                               </div>
                               </div>
                               <!-- the Total card ends here -->
+                             <hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+                               <!-- The today card begins here -->
+                              
+                            <div id="totalindiacases">
+                              <div class="card card-nav-tabs card-plain">
+                                <div class="card-header card-header-danger">
+                                  <h6 align="Center"><strong>Today Cases in India</strong></h6>
+                                  <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <ul class="nav nav-tabs " data-tabs="tabs">
+                                                <li class="nav-item ">
+                                                    <a class="nav-link active" href="#confirmedindiatoday" data-toggle="tab"><font size="5px"><strong>Confirmed</strong></font></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#recoveredindiatoday" data-toggle="tab"><font size="5px"><strong>Recovered</strong></font></a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#deathindiatoday" data-toggle="tab"><font size="5px"><strong>Deaths</strong></font></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><div class="card-body">
+                                    <div class="tab-content text-center">
+                                        <div class="tab-pane active" id="confirmedindiatoday">
+                                          <font size="10px"><p id="cindia">Confirmed cases today are </p></font>
+                                        </div>
+                                        <div class="tab-pane" id="recoveredindiatoday">
+                                          <font size="10px"><p id="rindia">Total Recovered cases are </p></font>
+                                        </div>
+                                        <div class="tab-pane" id="deathindiatoday">
+                                          <font size="10px"><p id="dindia">Total Deaths are </p></font>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              </div>
+
                           </p></font>
                         </div> <!-- the total cases ends here-->
                         <div class="tab-pane" id="state">
@@ -265,6 +306,7 @@
     <!-- card ends here -->
     <!-- new card for search bar -->
 <div id="searchbar">
+  <div>
   <h3 align="Center"><font size="30px"><strong id="countryname">Name of Country</strong></font></h3>
   <div class="card card-nav-tabs card-plain">
     <div class="card-header card-header-danger">
@@ -305,11 +347,129 @@
     </div>
   </div>
   </div>
+  <br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda"><br>
+  <div >
+    <h3 align="Center"><font size="30px"><strong id="countrynametoday">Name of Country</strong></font></h3>
+    <div class="card card-nav-tabs card-plain">
+      <div class="card-header card-header-danger">
+          <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+          <div class="nav-tabs-navigation ">
+              <div class="nav-tabs-wrapper">
+                  <ul class="nav nav-tabs " data-tabs="tabs">
+                      <li class="nav-item ">
+                          <a class="nav-link active" href="#confirmedsearchtoday1" data-toggle="tab"><font size="5px"><strong>Confirmed</strong></font></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#recoversearchtoday1" data-toggle="tab"><font size="5px"><strong>Recovered</strong></font></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#deathssearchtoday1" data-toggle="tab"><font size="5px"><strong>Deaths</strong></font></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div><div class="card-body">
+          <div class="tab-content text-center">
+              <div class="tab-pane active" id="confirmedsearchtoday1">
+                <font size="10px"><p id="confirmedcasesinsearch1">Confirmed cases are</p></font>
+              </div>
+              <div class="tab-pane" id="recoversearchtoday1">
+                <font size="10px"><p id="recoveredcasesinsearch1">Recovered cases are </p></font>
+              </div>
+              <div class="tab-pane" id="deathssearchtoday1">
+                <font size="10px"><p id="deadinsearch1">Deaths are</p></font>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+</div> <!-- this is the div for id-->
   <!-- card for search bar ends here -->
+  <!-- cards for faqs -->
+  <div id="faq">
+<div id="Q">
+    
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">Is this site official?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff"><strong> NO!</strong><br> This site is not official, it is just a project developed for educational purposes. </font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">How is the data gathered for this project?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">For the data on this site, I have used certain APIs and I'm thankful to all the developers of the APIs.<br><br>The api I have used are as follows:<br>1. api.covid19india.org<br>2.corona-api.com<br>3.api.rootnet.in</font></p>
+    </div><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">What is a coronavirus and What is COVID-19?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">Coronaviruses are a large family of viruses which may cause illness in animals or humans.  In humans, several coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19.<br>COVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019. COVID-19 is now a pandemic affecting many countries globally.</font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">What are the symptoms of COVID-19?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">The most common symptoms of COVID-19 are fever, dry cough, and tiredness. Other symptoms that are less common and may affect some patients include aches and pains, nasal congestion, headache, conjunctivitis, sore throat, diarrhea, loss of taste or smell or a rash on skin or discoloration of fingers or toes. These symptoms are usually mild and begin gradually. Some people become infected but only have very mild symptoms.<br>
+        Most people (about 80%) recover from the disease without needing hospital treatment. Around 1 out of every 5 people who gets COVID-19 becomes seriously ill and develops difficulty breathing. Older people, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, or cancer, are at higher risk of developing serious illness.  However, anyone can catch COVID-19 and become seriously ill.  People of all ages who experience fever and/or  cough associated withdifficulty breathing/shortness of breath, chest pain/pressure, or loss of speech or movement should seek medical attention immediately. If possible, it is recommended to call the health care provider or facility first, so the patient can be directed to the right clinic.</font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">What should I do if I have COVID-19 symptoms and when should I seek medical care?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">If you have minor symptoms, such as a slight cough or a mild fever, there is generally no need to seek medical care. Stay at home, self-isolate and monitor your symptoms. Follow national guidance on self-isolation.
+<br>
+        However, if you live in an area with malaria or dengue fever it is important that you do not ignore symptoms of fever.  Seek medical help.  When you attend the health facility wear a mask if possible, keep at least 1 metre distance from other people and do not touch surfaces with your hands. If it is a child who is sick help the child stick to this advice.
+    <br>    
+        Seek immediate medical care if you have difficulty breathing or pain/pressure in the chest. If possible, call your health care provider in advance, so he/she can direct you to the right health facility.</font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">How does COVID-19 spread?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">People can catch COVID-19 from others who have the virus. The disease spreads primarily from person to person through small droplets from the nose or mouth, which are expelled when a person with COVID-19 coughs, sneezes, or speaks. These droplets are relatively heavy, do not travel far and quickly sink to the ground. People can catch COVID-19 if they breathe in these droplets from a person infected with the virus.  This is why it is important to stay at least 1 meter) away from others. These droplets can land on objects and surfaces around the person such as tables, doorknobs and handrails.  People can become infected by touching these objects or surfaces, then touching their eyes, nose or mouth.  This is why it is important to wash your hands regularly with soap and water or clean with alcohol-based hand rub.
+<br>
+        WHO is assessing ongoing research on the ways that COVID-19 is spread and will continue to share updated findings.   </font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">Can COVID-19 be caught from a person who has no symptoms?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">COVID-19 is mainly spread through respiratory droplets expelled by someone who is coughing or has other symptoms such as fever or tiredness. Many people with COVID-19 experience only mild symptoms. This is particularly true in the early stages of the disease. It is possible to catch COVID-19 from someone who has just a mild cough and does not feel ill.
+<br>
+        Some reports have indicated that people with no symptoms can transmit the virus. It is not yet known how often it happens. WHO is assessing ongoing research on the topic and will continue to share updated findings.</font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">How can we protect others and ourselves if we don't know who is infected?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">Practicing hand and respiratory hygiene is important at ALL times and is the best way to protect others and yourself.
+<br>
+        When possible maintain at least a 1 meter distance between yourself and others. This is especially important if you are standing by someone who is coughing or sneezing.  Since some infected persons may not yet be exhibiting symptoms or their symptoms may be mild, maintaining a physical distance with everyone is a good idea if you are in an area where COVID-19 is circulating. </font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">What should I do if I have come in close contact with someone who has COVID-19?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">If you have been in close contact with someone with COVID-19, you may be infected.
+<br>
+        Close contact means that you live with or have been in settings of less than 1 metre from those who have the disease. In these cases, it is best to stay at home.
+        <br>
+        However, if you live in an area with malaria or dengue fever it is important that you do not ignore symptoms of fever. Seek medical help. When you attend the health facility wear a mask if possible, keep at least 1 metre distant from other people and do not touch surfaces with your hands. If it is a child who is sick help the child stick to this advice.
+        <br>
+        If you do not live in an area with malaria or dengue fever please do the following:
+        <br>
+        If you become ill, even with very mild symptoms you must self-isolate
+        Even if you don’t think you have been exposed to COVID-19 but develop symptoms, then self-isolate and monitor yourself
+        You are more likely to infect others in the early stages of the disease when you just have mild symptoms, therefore early self-isolation is very important.
+        If you do not have symptoms, but have been exposed to an infected person, self-quarantine for 14 days.
+        If you have definitely had COVID-19 (confirmed by a test) self-isolate for 14 days even after symptoms have disappeared as a precautionary measure – it is not yet known exactly how long people remain infectious after they have recovered. Follow national advice on self-isolation.</font></p>
+    </div><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda">
+
+    <div class="info">
+      <h4 class="info-title" align="center"><b><font size="5px" color="#fc9d03">Are children at lower risk of COVID-19 than adults?</b></font></h4>
+      <p align="center"><font size="4" color="#0099ff">Children are less often reported as cases when compared with adults, and the illness they experience is usually mild. From data reported to WHO, children and adolescents up to 18 years of age represent 1 to 3% of reported infections, even though this age group makes up 29% of the global population.
+<br>
+        While children may be less affected, they may also have a greater number of contacts in school and community settings. Further studies are underway to assess the risk of infection in children and to better understand transmission in this age group. </font></p>
+    </div>
+</div>
+  </div>
+
     <br><br><br><hr style="height:5px;border-width:0;color:#51bcda;background-color:#51bcda"><br><br><br>
 <!-- new card for toady stats begins here -->
 <div id="landtoday">
-  <h3 align="Center" ><font size="30px"><strong>Worldwide Cases Today</strong></font></h3>
+  <h3 align="Center"><font size="30px"><strong>Worldwide Cases Today</strong></font></h3>
   <div class="card card-nav-tabs card-plain">
     <div class="card-header card-header-danger">
         <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->

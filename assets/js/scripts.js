@@ -1,6 +1,6 @@
 //variables
 var l=0;
-var fin,cur,act,rec,dea,coun,kill;
+var fin,cur,act,rec,dea,coun,kill,sct,srt,sdt;
 var confirmed,recovered,deaths,activecase,confirmedtoday,recoveredtoday,deathstoday;
 var indiaconfirmed,indiarecovered,indiaactive,indiadeaths;
 //to hide element
@@ -31,10 +31,18 @@ var searchconfirmed=document.getElementById("confirmedcasesinsearch");
 var searchactive=document.getElementById("activecasesinsearch");
 var searchrecovered=document.getElementById("recoveredcasesinsearch");
 var searchdeaths=document.getElementById("deadinsearch");
+var searchcountrytoday=document.getElementById("countrynametoday");
+var searchconfirmedtoday=document.getElementById("confirmedcasesinsearch1");
+var searchrecoveredtoday=document.getElementById("recoveredcasesinsearch1");
+var searchdeathstoday=document.getElementById("deadinsearch1");
 var indiacon=document.getElementById("confirmindia");
 var indiaacti=document.getElementById("actiindia");
 var indiareco=document.getElementById("recoindia");
 var indiadead=document.getElementById("deadindia");
+var faq=document.getElementById("faq");
+var ccin=document.getElementById("cindia");
+var rrin=document.getElementById("rindia");
+var ddin=document.getElementById("dindia");
 
 
 //links and their references.
@@ -45,6 +53,7 @@ ind.addEventListener('click',function(){
     hidet("land");
     hidet("landtoday");
     hidet("searchbar");
+    hidet("faq");
     showt("tableindia");
     });
 
@@ -55,6 +64,7 @@ word.addEventListener('click',function(){
     hidet("land");
     hidet("searchbar");
     hidet("landtoday");
+    hidet("faq");
     showt("tableworld");
     });
 
@@ -64,9 +74,22 @@ home.addEventListener('click',function(){
     hidet("tableindia");
     hidet("tableworld");
     hidet("searchbar");
+    hidet("faq");
     showt("land");
     showt("landtoday");
     });
+
+//link for click on FAQ
+var Faq= document.getElementById("Q");
+Faq.addEventListener('click',function(){
+    hidet("tableworld");
+    hidet("land");
+    hidet("landtoday");
+    hidet("searchbar");
+    hidet("tableindia");
+    showt("faq")
+    });
+
 
 //corona-api for landing page....
 function homepage(){
@@ -88,7 +111,7 @@ homepage();
 
 function print(){
 setTimeout(function(){
-    l=l+1;
+  
 //for world till date
     landingconfirmed.innerText="Confirmed cases are " + confirmed;
     landingactive.innerText="Active cases are " + activecase;
@@ -98,11 +121,6 @@ setTimeout(function(){
     landingconfirmedtoday.innerText="Confirmed Cases today are  " + confirmedtoday;
     landingrecoveredtoday.innerText="Recovered Cases today are  " + recoveredtoday;
     landingdeathstoday.innerText="Deaths today are  " + deathstoday;
-//for india today
-    indiacon.innerText="Confirmed Cases are " + indiaconfirmed;
-    indiaacti.innerText="Active Cases are " + indiaactivated;
-    indiareco.innerText="Recovered Cases are " + indiarecover;
-    indiadead.innerText="Deaths are " + indiadeath;
 },3000);
 }
 
@@ -113,7 +131,7 @@ setTimeout(function(){
     print();
     // world_table();
     refresh();
-},10000);
+},60000);
 }
 
 
@@ -159,13 +177,13 @@ corona.innerHTML=z;
 //search function
 function find(){
     fin=document.getElementById("mySearch").value;
-    if(fin.length <= 3){
+    if(fin.length < 3){
     fin=fin.toUpperCase();
     }
-        else{
+    else{
     fin=fin.replace(/^./, fin[0].toUpperCase());
         }
-    //console.log(fin);
+    // console.log(fin);
 }
 
 //function to update the search result into the html nav card
@@ -179,53 +197,15 @@ function searchresult(){
     searchrecovered.innerText="Recovered cases are " + rec;
     // console.log(searchdeaths);
     searchdeaths.innerText="Deaths are  " + dea;
+
+    searchcountrytoday.innerText="Cases in "+ coun +" today";
+    searchconfirmedtoday.innerText="Confirmed cases are " + sct;
+    searchrecoveredtoday.innerText="Recovered cases are " + srt;
+    searchdeathstoday.innerText="Deaths are  " + sdt;
 }
 
-//link for search bar
-var home = document.getElementById("searchclick");
-home.addEventListener('click',function(){
-    hidet("tableindia");
-    hidet("tableworld");
-    hidet("land");
-    hidet("landtoday");
-    showt("searchbar");
-    find();
-    
-    for(j in store["data"]){
-        // kill=;
-        if(store["data"][j]["name"]==fin || store["data"][j]["code"]==fin)
-        {
-            //console.log(fin);
-            cur = store["data"][j]["latest_data"]["confirmed"];
-            act = store["data"][j]["latest_data"]["critical"];
-            rec=store["data"][j]["latest_data"]["recovered"];
-            dea= store["data"][j]["latest_data"]["deaths"];
-            coun=store["data"][j]["name"];
-            searchresult();
-            break;
-        }
-    }
-    });
-
-// function for india total cases
-function indiatoday(){
-    fetch('https://api.rootnet.in/covid19-in/stats/latest')
-    .then((response)=>{
-    return response.json()
-    })
-    .then((data)=>{
-    indiaconfirmed=data["data"]["unofficial-summary"][0]["total"];
-    //deathstoday=data["data"][0]["new_deaths"];
-    indiaactivated=data["data"]["unofficial-summary"][0]["active"];
-    indiarecover=data["data"]["unofficial-summary"][0]["recovered"];
-    indiadeath=data["data"]["unofficial-summary"][0]["deaths"];
-    })
-}
-indiatoday();
-
-
- //corona-api for india statewise table
-var p,q,r,s,t,u='',v='',w,ct,rt,dt;
+//corona-api for india statewise table
+var p,q,r,s,t,u='',v='',w,ct,rt,dt,cin,rin,din;
 var stateindia=document.getElementById('statewisetable');
 //india_table function for adding data to the india table
 function india_table(){
@@ -234,8 +214,9 @@ fetch("https://api.covid19india.org/data.json")
     return response.json()
     })
     .then((data)=>{
-w=data; //data for searching
+w=data; //data for searching states of india
     	for(k in data["statewise"]){
+          
           p=data["statewise"][k]["state"]; //state name
           q=data["statewise"][k]["confirmed"]; //total confirmed cases
           r=data["statewise"][k]["active"]; //total active cases
@@ -246,6 +227,9 @@ w=data; //data for searching
           dt=data["statewise"][k]["deltadeaths"];
 //console.log(p,q,r,s,t,ct,rt,dt);
 if(k==0){
+    cin=data["statewise"][k]["deltaconfirmed"];
+    rin=data["statewise"][k]["deltadeaths"];
+    din=data["statewise"][k]["deltarecovered"];
     continue;
 }
           u+='<tr>';
@@ -261,8 +245,95 @@ if(k==0){
 }
 v=v+u;
 stateindia.innerHTML=v;
-    })}
+ccin.innerText="Confirmed cases today are " + cin;
+rrin.innerText="Recovered cases today are " + din;
+ddin.innerText="Deaths today are " + rin;
+
+
+
+    })
+
+}
 india_table();
+
+
+
+
+//link for search bar
+var home = document.getElementById("searchclick");
+home.addEventListener('click',function(){
+    hidet("tableindia");
+    hidet("tableworld");
+    hidet("land");
+    hidet("landtoday");
+    hidet("faq");
+    showt("searchbar");
+    find();
+    
+    for(j in store["data"]){
+        // kill=;
+        if(store["data"][j]["name"]==fin || store["data"][j]["code"]==fin)
+        {
+            //console.log(fin);
+            cur = store["data"][j]["latest_data"]["confirmed"];
+            act = store["data"][j]["latest_data"]["critical"];
+            rec=store["data"][j]["latest_data"]["recovered"];
+            dea= store["data"][j]["latest_data"]["deaths"];
+            coun=store["data"][j]["name"];
+            sct=store["data"][j]["today"]["confirmed"];
+            srt="Not Available";
+            sdt=store["data"][j]["today"]["deaths"];
+            searchresult();
+            break;
+        }
+    }
+
+            for(re in w["statewise"]){
+            if(w["statewise"][re]["statecode"]==fin || w["statewise"][re]["state"]==fin)
+        {
+            //console.log(fin);
+            cur = w["statewise"][re]["confirmed"];
+            act = w["statewise"][re]["active"];
+            rec=w["statewise"][re]["recovered"];
+            dea= w["statewise"][re]["deaths"];
+            coun=w["statewise"][re]["state"];
+            sct=w["statewise"][re]["deltaconfirmed"];
+            srt=w["statewise"][re]["deltarecovered"];
+            sdt=w["statewise"][re]["deltadeaths"];
+            // console.log(cur,act,rec,dea,coun);
+            searchresult();
+            break;
+        }
+            }
+           
+    
+    });
+
+// function for india total cases
+function indiatoday(){
+    fetch('https://api.rootnet.in/covid19-in/stats/latest')
+    .then((response)=>{
+    return response.json()
+    })
+    .then((data)=>{
+    indiaconfirmed=data["data"]["unofficial-summary"][0]["total"];
+    //deathstoday=data["data"][0]["new_deaths"];
+    indiaactivated=data["data"]["unofficial-summary"][0]["active"];
+    indiarecover=data["data"]["unofficial-summary"][0]["recovered"];
+    indiadeath=data["data"]["unofficial-summary"][0]["deaths"];
+
+    //for india today
+indiacon.innerText="Confirmed Cases are " + indiaconfirmed;
+indiaacti.innerText="Active Cases are " + indiaactivated;
+indiareco.innerText="Recovered Cases are " + indiarecover;
+indiadead.innerText="Deaths are " + indiadeath;
+
+    })
+}
+indiatoday();
+
+
+ 
 
 //corona-api for india tests taken table
 var date,test,res='',restotal='';
@@ -274,7 +345,6 @@ fetch("https://api.rootnet.in/covid19-in/stats/testing/history")
     return response.json()
     })
     .then((data)=>{
-w=data; //data for searching
     	for(m in data["data"]){
           date=data["data"][m]["day"];
           test=data["data"][m]["totalSamplesTested"];
@@ -387,6 +457,7 @@ india_medi();
        // hidet("landtoday");
         hidet("tableindia");
         hidet("tableworld");
+        hidet("faq");
     
 //javascript for activating the Perfect Scrollbar -->
 $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
