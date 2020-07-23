@@ -131,7 +131,7 @@ setTimeout(function(){
     print();
     // world_table();
     refresh();
-},60000);
+},50000);
 }
 
 
